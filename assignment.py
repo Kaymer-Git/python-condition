@@ -388,11 +388,19 @@ third = 8
 #
 # Determine what is highest.
 if first > second and first > third:
-    print("a is highest")
+    print("first is highest")
 elif second > first and second > third:
-    print("b is highest")
+    print("second is highest")
 elif third > first and third > second:
-    print("c is highest")
+    print("third is highest")
+elif first == second and first > third:
+    print("first and second are tied for highest")
+elif first == third and first > second:
+    print("first and third are tied for highest")
+elif second == third and second > first:
+    print("second and third are tied for highest")
+else:
+    print("all three are tied")
 # Your program must correctly handle the tie.
 #
 # Possible outputs:
@@ -408,12 +416,17 @@ elif third > first and third > second:
 # TASK 20:
 # Create:
 #
-# first = 5
-# second = 5
-# third = 5
+first = 5
+second = 5
+third = 5
 #
 # Determine whether:
-#
+if first == second and second == third:
+    print("All equal")
+elif (first == second and second != third) or (first == third and third != second) or (second == third and second != first):
+    print("Exactly two equal")
+else:
+    print("All different")
 # - all three are equal
 # - exactly two are equal
 # - none are equal
@@ -430,12 +443,15 @@ elif third > first and third > second:
 # TASK 21:
 # Create:
 #
-# a = 9
-# b = 4
-# c = 9
+a = 9
+b = 4
+c = 9
 #
 # Determine whether AT LEAST TWO numbers match.
-#
+if a == b or b == c or c == a:
+    print("A match exists")
+else:
+    print("No match")
 # Print:
 # A match exists
 #
@@ -446,12 +462,15 @@ elif third > first and third > second:
 # TASK 22:
 # Create:
 #
-# a = 14
-# b = 7
-# c = 20
+a = 14
+b = 7
+c = 20
 #
 # Determine whether a is BETWEEN b and c.
-#
+if (a < b and a > c) or (a < c and a > b):
+    print("a is between b and c")
+else:
+    print("a is not between b and c")
 # Print:
 # a is between b and c
 #
@@ -467,12 +486,15 @@ elif third > first and third > second:
 # TASK 23:
 # Create:
 #
-# a = 50
-# b = 20
-# c = 80
+a = 50
+b = 20
+c = 80
 #
 # Determine whether b is the lowest AND c is the highest.
-#
+if (b < a and b < c) and (c > a and c > b):
+    print("Correct order")
+else:
+    print("Different order")
 # If BOTH are true, print:
 # Correct order
 #
@@ -489,10 +511,16 @@ elif third > first and third > second:
 #
 # Store them in:
 #
-# first_number
-# second_number
-# third_number
-#
+first_number = int(input("Enter a whole number: "))
+second_number = int(input("Enter another whole number: "))
+third_number = int(input("Enter one more whole number: "))
+if first_number <= second_number and first_number <= third_number:
+    print(first_number)
+elif second_number <= first_number and second_number <= third_number:
+    print(second_number)
+else:
+    print(third_number)
+
 # WITHOUT using min() or max(), print the LOWEST number.
 
 
@@ -501,10 +529,15 @@ elif third > first and third > second:
 #
 # Store them in:
 #
-# value1
-# value2
-# value3
-#
+value1 = int(input("Enter a whole number: "))
+value2 = int(input("Enter another whole number: "))
+value3 = int(input("Enter one more whole number: "))
+if value1 >= value2 and value1 >= value3:
+    print(value1)
+elif value2 >= value1 and value2 >= value3:
+    print(value2)
+else:
+    print(value3)
 # WITHOUT using min() or max(), print the HIGHEST number.
 
 
@@ -513,12 +546,15 @@ elif third > first and third > second:
 #
 # Store them in:
 #
-# n1
-# n2
-# n3
+n1 = int(input("Enter a whole number: "))
+n2 = int(input("Enter another whole number: "))
+n3 = int(input("Enter one more whole number: "))
 #
 # Determine whether the user entered them in STRICTLY increasing order.
-#
+if n1 < n2 and n2 < n3:
+    print("Increasing")
+else:
+    print("Not increasing")
 # Example:
 # 3, 8, 10 -> Increasing
 #
@@ -535,12 +571,15 @@ elif third > first and third > second:
 #
 # Store them in:
 #
-# n1
-# n2
-# n3
+n1 = int(input("Enter a whole number: "))
+n2 = int(input("Enter another whole number: "))
+n3 = int(input("Enter one more whole number: "))
 #
 # Determine whether the numbers are in STRICTLY decreasing order.
-#
+if n1 > n2 and n2 > n3:
+    print("Decreasing")
+else:
+    print("Not decreasing")
 # Print:
 # Decreasing
 # OR
@@ -552,10 +591,15 @@ elif third > first and third > second:
 #
 # Store them in:
 #
-# a
-# b
-# c
-#
+a = int(input("Enter a whole number: "))
+b = int(input("Enter another whole number: "))
+c = int(input("Enter one more whole number: "))
+if a == b and b == c:
+    print("All same")
+elif (a == b and a != c) or (a == c and c != b) or (b == c and b != a):
+    print("Two same")
+else:
+    print("All different")
 # Print:
 # All same
 # if all three match
@@ -572,10 +616,21 @@ elif third > first and third > second:
 #
 # Store it in:
 #
-# user_score
+user_score = float(input("What is your score from 0 to 100: "))
 #
 # FIRST determine if the score is valid.
-#
+if user_score < 0 or user_score > 100:
+    print("Invalid score")
+elif user_score >= 90:
+    print("A")
+elif user_score >= 80:
+    print("B")
+elif user_score >= 70:
+    print("C")
+elif user_score >= 60:
+    print("D")
+else:
+    print("F")
 # If it is below 0 OR above 100, print:
 # Invalid score
 #
@@ -593,19 +648,21 @@ elif third > first and third > second:
 # TASK 30:
 # Create a function named:
 #
-# say_hello
+def say_hello():
+    print("Hello!")
 #
 # It should print:
 # Hello!
 #
 # Call it once.
+say_hello()
 
 
 # TASK 31:
 # Create a function named:
 #
-# greet_student
-#
+def greet_student(name):
+    print("Hello " + name)
 # Give it ONE parameter:
 #
 # name
@@ -614,13 +671,16 @@ elif third > first and third > second:
 # Hello [name]
 #
 # Call it THREE times using different names.
+greet_student("Kaymer")
+greet_student("Uli")
+greet_student("Jio")
 
 
 # TASK 32:
 # Create a function named:
 #
-# add_three
-#
+def add_three(a, b, c):
+    print(str(a + b + c))
 # Give it THREE parameters:
 #
 # a
@@ -630,6 +690,8 @@ elif third > first and third > second:
 # Print the sum of all three.
 #
 # Call it at least TWO times.
+add_three(1, 2, 3)
+add_three(3, 2, 1)
 
 
 # ============================================================
@@ -639,8 +701,14 @@ elif third > first and third > second:
 # TASK 33:
 # Create a function named:
 #
-# check_number
-#
+def check_number(number):
+    if number > 0:
+        print("Positive")
+    elif number == 0:
+        print("Zero")
+    else:
+        print("Negative")
+
 # Give it ONE parameter:
 #
 # number
@@ -655,13 +723,18 @@ elif third > first and third > second:
 # 10
 # -5
 # 0
-
+check_number(1)
+check_number(0)
+check_number(-1)
 
 # TASK 34:
 # Create a function named:
 #
-# check_even_odd
-#
+def check_even_odd(number):
+    if number % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
 # Give it ONE parameter:
 #
 # number
@@ -672,13 +745,23 @@ elif third > first and third > second:
 # Odd
 #
 # Test it at least FOUR times.
-
+check_even_odd(1)
+check_even_odd(2)
+check_even_odd(3)
+check_even_odd(4)
 
 # TASK 35:
 # Create a function named:
 #
-# ticket_type
-#
+def ticket_type(age):
+    if age < 13:
+        print("Child")
+    elif age < 18:
+        print("Teen")
+    elif age < 65:
+        print("Adult")
+    else:
+        print("Senior")
 # Give it ONE parameter:
 #
 # age
@@ -703,13 +786,23 @@ elif third > first and third > second:
 # 18
 # 64
 # 65
-
+ticket_type(12)
+ticket_type(13)
+ticket_type(17)
+ticket_type(18)
+ticket_type(64)
+ticket_type(65)
 
 # TASK 36:
 # Create a function named:
 #
-# find_highest
-#
+def find_highest(a, b, c):
+    if a >= b and a >= c:
+        print(a)
+    elif b >= a and b >= c:
+        print(b)
+    else:
+        print(c)
 # Give it THREE parameters:
 #
 # a
@@ -719,15 +812,21 @@ elif third > first and third > second:
 # WITHOUT using max(), print the highest value.
 #
 # Test:
-# find_highest(5, 20, 11)
-# find_highest(100, 25, 60)
-# find_highest(8, 9, 30)
+find_highest(5, 20, 11)
+find_highest(100, 25, 60)
+find_highest(8, 9, 30)
 
 
 # TASK 37:
 # Create a function named:
 #
-# find_lowest
+def find_lowest(a, b, c):
+    if a <= b and a <= c:
+        print(a)
+    elif b <= a and b <= c:
+        print(b)
+    else:
+        print(c)
 #
 # Give it THREE parameters:
 #
@@ -738,13 +837,21 @@ elif third > first and third > second:
 # WITHOUT using min(), print the lowest value.
 #
 # Test at least THREE times.
+find_lowest(5, 20, 11)
+find_lowest(100, 25, 60)
+find_lowest(8, 9, 30)
 
 
 # TASK 38:
 # Create a function named:
 #
-# find_middle
-#
+def find_middle(a, b, c):
+    if ((a < b) or (a < c)) and ((a > b) or (a > c)):
+        print(str(a))
+    elif ((b < a) or (b < c)) and ((b > a) or (b > c)):
+        print(str(b))
+    elif ((c < a) or (c < b)) and ((c > a) or (c > b)):
+     print(str(c))
 # Give it THREE parameters:
 #
 # a
@@ -755,16 +862,21 @@ elif third > first and third > second:
 # print the MIDDLE value.
 #
 # Test:
-# find_middle(10, 30, 20)
-# find_middle(100, 5, 50)
-# find_middle(7, 9, 8)
+find_middle(10, 30, 20)
+find_middle(100, 5, 50)
+find_middle(7, 9, 8)
 
 
 # TASK 39:
 # Create a function named:
 #
-# compare_three
-#
+def compare_three(a, b, c):
+    if a == b and b == c:
+        print("All equal")
+    elif (a == b and a != c) or (a == c and c != b) or (b == c and b != a):
+       print("Exactly two equal")
+    else:
+        print("All different")
 # Give it THREE parameters:
 #
 # a
@@ -778,13 +890,19 @@ elif third > first and third > second:
 # All different
 #
 # Test all three situations.
+compare_three(1, 1, 1)
+compare_three(1, 1, 2)
+compare_three(1, 2, 3)
 
 
 # TASK 40:
 # Create a function named:
 #
-# is_in_range
-#
+def is_in_range(number, low, high):
+    if (number >= low and number <= high) or (number >= high and number <= low):
+        print("In range")
+    else:
+        print("Out of range")
 # Give it THREE parameters:
 #
 # number
@@ -817,8 +935,8 @@ elif third > first and third > second:
 # TASK 41:
 # Create a function named:
 #
-# multiply_numbers
-#
+def multiply_numbers(num1, num2):
+    return num1 * num2
 # Give it TWO parameters:
 #
 # num1
@@ -830,16 +948,21 @@ elif third > first and third > second:
 # multiply_numbers(6, 7)
 #
 # inside:
-# multiplication_result
+multiplication_result = multiply_numbers(6, 7)
 #
 # Print multiplication_result.
+print(str(multiplication_result))
 
 
 # TASK 42:
 # Create a function named:
 #
-# larger_number
-#
+def larger_number(a, b):
+    if a >= b:
+        return a
+    else:
+        return b
+     
 # Give it TWO parameters:
 #
 # a
@@ -853,7 +976,7 @@ elif third > first and third > second:
 # larger_number(15, 40)
 #
 # inside:
-# bigger
+bigger = larger_number(15, 40)
 #
 # Print bigger.
 
