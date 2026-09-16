@@ -1572,9 +1572,27 @@ else:
 # TASK 63:
 # Create these THREE functions:
 #
-# get_highest(a, b, c)
-# get_lowest(a, b, c)
-# get_middle(a, b, c)
+def get_highest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and  b >= c:
+        return b
+    else:
+        return c
+def get_lowest(a, b, c):
+    if a <= b and a <= c:
+        return a
+    elif b <= a and  b <= c:
+        return b
+    else:
+        return c
+def get_middle(a, b, c):
+    if (a > b and a < c ) or (a > c and  a < b):
+        return a
+    elif (b > a and b < c) or (b > c and b < a):
+        return b
+    else:
+        return c
 #
 # Each function must RETURN the correct value.
 #
@@ -1582,23 +1600,23 @@ else:
 #
 # Store them in:
 #
-# first
-# second
-# third
+first = int(input("Enter a whole number: "))
+second = int(input("Enter another whole number: "))
+third = int(input("Enter one more whole number: "))
 #
 # Call all three functions.
 #
 # Store the returned results in:
 #
-# highest
-# lowest
-# middle
+highest = get_highest(first, second, third)
+lowest = get_lowest(first, second, third)
+middle = get_middle(first, second, third)
 #
 # Then print:
 #
-# Highest: [highest]
-# Middle: [middle]
-# Lowest: [lowest]
+print("Highest: " + str(highest))
+print("Middle: " + str(middle))
+print("Lowest: " + str(lowest))
 #
 # Do NOT use min(), max(), or sorting.
 
@@ -1610,8 +1628,13 @@ else:
 # TASK 64:
 # Create a function named:
 #
-# admission_decision
-#
+def admission_decision(grade, attendance, interview):
+    if grade >= 90 and attendance >= 90:
+        print("Accepted")
+    elif grade >= 80 and attendance >= 80 and interview == "pass":
+        print("Accepted")
+    else:
+        print("Not accepted")
 # Give it THREE parameters:
 #
 # grade
@@ -1630,10 +1653,10 @@ else:
 #
 # Test:
 #
-# admission_decision(95, 95, "fail")
-# admission_decision(85, 85, "pass")
-# admission_decision(85, 85, "fail")
-# admission_decision(75, 100, "pass")
+admission_decision(95, 95, "fail")
+admission_decision(85, 85, "pass")
+admission_decision(85, 85, "fail")
+admission_decision(75, 100, "pass")
 #
 # THINK:
 # The first person should still be accepted even though
@@ -1647,9 +1670,9 @@ else:
 # TASK 65:
 # Create:
 #
-# a = 15
-# b = 8
-# c = 15
+a = 15
+b = 8
+c = 15
 #
 # Your program must determine BOTH:
 #
@@ -1657,7 +1680,16 @@ else:
 # 2. Whether that highest value is unique or tied
 #
 # Print:
-#
+if a >= b and a >= c:
+    print(a)
+elif b >= a and  b >= c:
+    print(b)
+else:
+    print(c)
+if (a == b and a >= c) or (b == c and b > a) or (c == a and c > b):
+    print("Tied highest")
+else:
+    print("Unique highest")
 # Highest: [value]
 #
 # Then print ONE of:
@@ -1699,8 +1731,13 @@ else:
 #
 # Write a function named:
 #
-# convert_temperature
-#
+def convert_temperature(temperature, scale):
+    if scale == "C":
+        return temperature * 1.8 + 32
+    elif scale == "F":
+        return (temperature - 32) / 1.8
+    else:
+        print("temperature must be a number and scale can only be C or F")
 # Parameters:
 #
 # temperature
@@ -1741,7 +1778,13 @@ else:
 #
 # Write a function named:
 #
-# to_kelvin
+def to_kelvin(temperature, scale):
+    if scale == "c":
+        return temperature + 273.15
+    elif scale == "F":
+        return (temperature - 32) / 1.8 + 273.15
+    else:
+        print("temperature must be a number and scale can only be C or F")
 #
 # Parameters:
 #
@@ -1779,7 +1822,13 @@ else:
 #
 # Write a function named:
 #
-# parking_cost
+def parking_cost(hours):
+    if hours > 8:
+        return 25
+    elif hours >= 2:
+        return 5 + 3 * hours
+    else:
+        return 5
 #
 # Parameter:
 #
@@ -1813,7 +1862,19 @@ else:
 #
 # Write a function named:
 #
-# movie_total
+def movie_total(age, is_weekend):
+    if age < 13:
+        if is_weekend == True:
+            return 11
+        else:
+            return 8
+    elif age < 65:
+        if is_weekend == True:
+            return 15
+        else:
+            return 12
+    else:
+        return 7
 #
 # Parameters:
 #
@@ -1848,7 +1909,11 @@ else:
 #
 # Write a function named:
 #
-# electric_bill
+def electric_bill(usage):
+    if usage <= 100:
+        return usage * 0.10
+    else:
+        return (100 * 0.10) + ((usage - 100) * 0.20)
 #
 # Parameter:
 #
@@ -1882,7 +1947,11 @@ else:
 #
 # Write a function named:
 #
-# is_leap_year
+def is_leap_year(year):
+    if (year / 400 == 0) or (year / 4  == 0 and year / 100 != 0):
+        return True
+    else:
+        return False
 #
 # Parameter:
 #
@@ -1918,7 +1987,11 @@ else:
 #
 # Write a function named:
 #
-# valid_triangle
+def valid_triangle(a, b, c):
+    if a + b > c and a + c > b and b + c > a:
+        return True
+    else:
+        return False
 #
 # Parameters:
 #
