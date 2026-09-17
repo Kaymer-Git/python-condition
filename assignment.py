@@ -2027,7 +2027,16 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# triangle_type
+def triangle_type(a, b, c):
+    if not (a + b > c and a + c > b and b + c > a):
+        return "invalid"
+    elif a == b == c:
+        return "equilateral"
+    elif a == b != c or b == c != a or c == a != b:
+        return "isosceles"
+    else:
+        return "scalene"
+
 #
 # Parameters:
 #
@@ -2070,7 +2079,13 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# rps_winner
+def rps_winner(player1, player2):
+    if player1 == player2:
+        return "tie"
+    elif (player1 == "rock" and player2 == "scissors") or (player1 == "scissors" and player2 == "paper") or (player1 == "paper" and player2 == "rock"):
+        return "player1"
+    else:
+        return "player2"
 #
 # Parameters:
 #
@@ -2125,7 +2140,31 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# closest_to_100
+def closest_to_100(a, b):
+    da = 0
+    if a < 100:
+        da = 100 - a
+    elif a > 100:
+        da = a - 100
+    else:
+        da = 0
+
+    db = 0
+    if b < 100:
+        db = 100 - b
+    elif b > 100:
+        db = b - 100
+    else:
+        db = 0
+
+    if da == db:
+        return -1
+    elif da < db:
+        return a
+    else:
+        return b
+
+
 #
 # Parameters:
 #
@@ -2158,7 +2197,13 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# delivery_fee
+def delivery_fee(order_total, distance):
+    if order_total >= 50 and distance <= 5:
+        return 0
+    elif distance <= 5:
+        return 5
+    else:
+        return 10
 #
 # Parameters:
 #
@@ -2193,7 +2238,11 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# can_withdraw
+def can_withdraw(balance, amount):
+    if (amount > 0) or (amount <= balance) or (amount % 20 == 0):
+        return True
+    else:
+        False
 #
 # Parameters:
 #
@@ -2225,7 +2274,13 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# tip_amount
+def tip_amount(bill, service):
+    if service == "poor":
+        return bill * 10/100
+    elif service == "good":
+        return bill * 18/100
+    elif service == "excellent":
+        return bill * 25/100 
 #
 # Parameters:
 #
@@ -2264,7 +2319,15 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# battery_status
+def battery_status(battery, is_charging):
+    if battery <= 5 and is_charging == False:
+        return "critical"
+    elif battery <= 20 and is_charging == False:
+        return "low"
+    elif is_charging == True:
+        return "charging"
+    else:
+        return "normal"
 #
 # Parameters:
 #
@@ -2302,7 +2365,14 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# taxi_fare
+def taxi_fare(miles, is_night):
+    money = 4 + miles * 2
+    if is_night == True:
+        money = money + 5
+        return money
+    else:
+        return money
+
 #
 # Parameters:
 #
@@ -2334,7 +2404,13 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# calculate_damage
+def calculate_damage(attack, defense, critical):
+    damage = attack - defense
+    if damage < 0:
+        damage = 0
+    if critical == True:
+        damage = attack * 2 - defense
+    return damage
 #
 # Parameters:
 #
@@ -2369,7 +2445,13 @@ def valid_triangle(a, b, c):
 #
 # Write a function named:
 #
-# final_price
+def final_price(price, coupon):
+    if coupon == "none":
+        return price
+    elif coupon == "SAVE10":
+        return price * 9/10
+    else:
+        return price * 3/4
 #
 # Parameters:
 #
